@@ -32,7 +32,10 @@ def main(argv):
 
     # Fetch the data
     (train_x, train_y), (test_x, test_y) = iris_data.load_data()
-
+    print(123123123)
+    print(train_x)
+    print(123123123)
+    print(train_y)
     # Feature columns describe how to use the input.
     my_feature_columns = []
     for key in train_x.keys():

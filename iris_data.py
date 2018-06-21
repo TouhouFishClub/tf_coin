@@ -4,8 +4,7 @@ import tensorflow as tf
 TRAIN_URL = "http://download.tensorflow.org/data/iris_training.csv"
 TEST_URL = "http://download.tensorflow.org/data/iris_test.csv"
 
-CSV_COLUMN_NAMES = ['SepalLength', 'SepalWidth',
-                    'PetalLength', 'PetalWidth', 'Species']
+CSV_COLUMN_NAMES = ['Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'Date', 'open', 'close', 'High', 'Low', 'UP']
 SPECIES = ['Setosa', 'Versicolor', 'Virginica']
 
 def maybe_download():
@@ -14,9 +13,11 @@ def maybe_download():
     print(train_path)
     return train_path, test_path
 
-def load_data(y_name='Species'):
+def load_data(y_name='UP'):
     """Returns the iris dataset as (train_x, train_y), (test_x, test_y)."""
-    train_path, test_path = maybe_download()
+    #train_path, test_path = maybe_download()
+    train_path = "/home/ter/ai/tensorflow/ai1/tf_coin/train1.csv"
+    test_path = "/home/ter/ai/tensorflow/ai1/tf_coin/test1.csv"
 
     train = pd.read_csv(train_path, names=CSV_COLUMN_NAMES, header=0)
     train_x, train_y = train, train.pop(y_name)
